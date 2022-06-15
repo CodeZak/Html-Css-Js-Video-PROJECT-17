@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css);
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root {
+    background-color: white;
+}
+
+img {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.loadingImg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 9999999;
+    display: none;
+}
+
+.loadingImg.show_load {
+    display: block;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+video {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container::after {
+    content: "";
+    background-color: rgb(0, 0, 0);
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 555;
+    top: 0;
+    left: 0;
+}
+
+.container > span {
+    position: absolute;
+    font-size: 4em;
+    font-weight: 600;
+    color: white;
+    z-index: 55555;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons {
+    font-size: 1em;
+    z-index: 55555;
+    position: fixed;
+    left: 100px;
+    bottom: 60px;
+    width: 140px;
+    height: 40px;
+    background-color: rgb(248, 242, 242);
+    color: rgb(23, 151, 215);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.buttons span {
+    font-size: 1.2em;
+    padding: 0px 10px;
+}
+
+.buttons span:hover,
+.slider:hover {
+    cursor: pointer;
+}
+
+.slider {
+    border-radius: 10px;
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    background-color: rgb(67, 165, 213);
+    transition: 0.4s;
+    right: 50%;
+}
+
+.slider.move_right {
+    transition: 0.4s;
+    right: 0;
+}
